@@ -1,0 +1,12 @@
+{
+  "lightningTalks": [
+    {
+      "name": "Example Speaker 1",
+      "title": "Example Lightning Talk 1 Title"
+    },
+    {
+      "name": "Example Speaker 2",
+      "title": "Example Lightning Talk 2 Title"
+    }
+  ]
+}
