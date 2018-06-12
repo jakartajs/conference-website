@@ -49,6 +49,7 @@ const Root = styled.article`
       flex: 1 1 auto;
       padding-top: 3rem;
       padding-bottom: 3rem;
+      min-height: ${props => `calc(100vh - ${props.theme.pxSizes.heights.header}px)`};
     }
 
     a {

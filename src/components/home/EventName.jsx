@@ -17,12 +17,22 @@ EventName.propTypes = {
 export default EventName;
 
 const Wrapper = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
   padding: 0.25em 0.5em;
   z-index: 1;
   font-size: 16px;
-  background: ${props => props.theme.colors.brand};
-  border: 4px solid ${props => props.theme.colors.brand};
+  border: 4px solid ${props => props.theme.colors.border};
+  padding: 0.5rem 0.75rem;
+  box-shadow: -0.75rem 0.75rem ${props => props.theme.colors.border};
+  text-align: center;
+
+  @media (min-width: ${props => props.theme.pxSizes.breakpoints.md}px) {
+    margin-bottom: 1rem;
+    background: ${props => props.theme.colors.brand};
+    border: none;
+    box-shadow: none;
+    text-align: left;
+  }
 
   h1,
   p {
@@ -38,8 +48,16 @@ const Wrapper = styled.div`
     }
   }
 
+  h1 {
+    font-size: ${props => props.theme.emSizes.fontSizes.h2}rem;
+
+    @media (min-width: ${props => props.theme.pxSizes.breakpoints.lg}px) {
+      font-size: ${props => props.theme.emSizes.fontSizes.h1}rem;
+    }
+  }
+
   p {
-    font-size: ${props => props.theme.emSizes.fontSizes.h3}rem;
+    font-size: ${props => props.theme.emSizes.fontSizes.h4}rem;
 
     @media (min-width: ${props => props.theme.pxSizes.breakpoints.lg}px) {
       font-size: ${props => props.theme.emSizes.fontSizes.h1}rem;
