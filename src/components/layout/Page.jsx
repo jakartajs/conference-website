@@ -46,9 +46,11 @@ const Root = styled.article`
     background: ${props => props.theme.colors.brand};
 
     & .inner {
+      display: flex;
+      align-items: center;
       flex: 1 1 auto;
       padding-top: 3rem;
-      padding-bottom: 3rem;
+      padding-bottom: 5rem;
       min-height: ${props => `calc(100vh - ${props.theme.pxSizes.heights.header}px)`};
     }
 

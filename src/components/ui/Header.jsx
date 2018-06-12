@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import styled from 'react-emotion';
 
 import Logo from './Logo';
+import Container from './Container';
 
 /** @type {React.SFC} */
 const Header = () => (
@@ -43,7 +44,7 @@ const Root = styled.header`
   z-index: 10;
 `;
 
-const Inner = styled.div`
+const Inner = styled(Container)`
   display: flex;
   flex-direction: row;
   align-items: center;
