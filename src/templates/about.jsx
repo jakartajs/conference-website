@@ -8,10 +8,7 @@ import MarkdownContent from '../components/layout/MarkdownContent';
 const AboutPageTemplate = ({ data }) => (
   <DefaultLayout>
     <Page layout="about">
-      <PageTitle
-        title={data.site.siteMetadata.title}
-        subtitle={data.site.siteMetadata.description}
-      />
+      <PageTitle title={data.site.siteMetadata.title} subtitle={data.site.siteMetadata.datetime} />
       <MarkdownContent html={data.markdownRemark.html} />
     </Page>
   </DefaultLayout>
@@ -28,6 +25,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        datetime
         description
         author {
           name

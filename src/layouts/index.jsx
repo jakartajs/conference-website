@@ -25,7 +25,7 @@ const Layout = ({ children, data }) => (
       <Header siteTitle={data.site.siteMetadata.title} />
       {children()}
       <SponsorsSection sponsors={data.sponsors} />
-      <Footer siteName={data.site.siteMetadata.title} />
+      <Footer siteName={data.site.siteMetadata.author.name} />
     </LayoutRoot>
   </ThemeProvider>
 );
@@ -48,6 +48,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        datetime
         description
         author {
           name

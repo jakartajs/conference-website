@@ -64,13 +64,20 @@ const HeaderNav = styled.nav`
   justify-content: flex-end;
   height: 100%;
   align-items: center;
+  font-weight: 300;
 
   a {
     color: ${props => props.theme.colors.white};
-    margin-right: 1.5rem;
+    font-size: 0.85rem;
+    margin-right: 1rem;
 
     &:last-child {
       margin-right: 0;
+    }
+
+    @media (min-width: ${props => props.theme.pxSizes.breakpoints.md}px) {
+      font-size: 0.9rem;
+      margin-right: 1.5rem;
     }
   }
 `;

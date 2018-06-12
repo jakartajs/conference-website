@@ -36,20 +36,31 @@ export default Footer;
 
 const Root = styled.footer`
   display: flex;
-  flex-direction: row;
-  padding: 0.5rem 1.5rem;
+  flex-direction: column;
+  padding: 1rem 1.5rem;
   background: ${props => props.theme.colors.body};
   color: ${props => props.theme.colors.lighter};
   font-weight: 300;
+  text-align: center;
 
   p {
     margin: 0;
+  }
+
+  @media (min-width: ${props => props.theme.pxSizes.breakpoints.md}px) {
+    flex-direction: row;
+    text-align: left;
   }
 `;
 
 const FooterNav = styled.nav`
   flex: 1 1 auto;
-  margin-left: 1.5rem;
+  margin-top: 1rem;
+
+  @media (min-width: ${props => props.theme.pxSizes.breakpoints.md}px) {
+    margin-top: 0;
+    margin-left: 1.5rem;
+  }
 `;
 
 const FooterNavLinks = styled.ul`
@@ -58,15 +69,20 @@ const FooterNavLinks = styled.ul`
   list-style-type: none;
 
   li {
-    display: inline-block;
+    margin: 0.5rem 0;
 
-    &:not(:first-child) {
-      margin-left: 0.5rem;
+    @media (min-width: ${props => props.theme.pxSizes.breakpoints.md}px) {
+      display: inline-block;
+      margin: 0;
 
-      &:before {
-        content: '|';
+      &:not(:first-child) {
+        margin-left: 0.5rem;
 
-        margin-right: 0.5rem;
+        &:before {
+          content: '|';
+
+          margin-right: 0.5rem;
+        }
       }
     }
   }

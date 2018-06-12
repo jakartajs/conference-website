@@ -2,7 +2,14 @@
   "name": "@jakartajs/conference-website",
   "description": "Source code for the JakartaJS Conference website",
   "version": "1.0.0",
-  "author": "Resi Respati <resir014@gmail.com>",
+  "author": "JakartaJS <https://www.jakartajs.org>",
+  "contributors": [
+    {
+      "name": "Resi Respati",
+      "email": "resir014@gmail.com",
+      "url": "https://resir014.xyz"
+    }
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "emotion": "^9.1.3",

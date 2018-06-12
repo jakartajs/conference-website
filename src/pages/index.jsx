@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => (
       <HomepageHero>
         <EventName
           title={data.site.siteMetadata.title}
-          description={data.site.siteMetadata.description}
+          description={data.site.siteMetadata.datetime}
         />
         <EventDetails>
           <ul>
@@ -75,6 +75,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        datetime
         description
         author {
           name

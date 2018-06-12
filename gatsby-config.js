@@ -5,12 +5,12 @@
 module.exports = {
   siteMetadata: {
     title: 'JakartaJS Conference',
-    description: 'xx November 2018',
+    datetime: 'November 2018',
+    description: '',
     siteUrl: 'https://jsconf.id',
     author: {
-      name: 'Resi Respati',
-      url: 'https://twitter.com/resir014',
-      email: 'resir014@gmail.com',
+      name: 'JakartaJS',
+      url: 'https://www.jakartajs.org/',
     },
   },
   plugins: [
