@@ -18,6 +18,7 @@ export default EventName;
 
 const Wrapper = styled.div`
   margin-bottom: 2.5rem;
+  margin-left: 1.75rem;
   padding: 0.25em 0.5em;
   z-index: 1;
   font-size: 16px;
@@ -29,6 +30,7 @@ const Wrapper = styled.div`
   @supports (display: grid) {
     @media (min-width: ${props => props.theme.pxSizes.breakpoints.md}px) {
       margin-bottom: 1rem;
+      margin-left: 0;
       background: ${props => props.theme.colors.brand};
       border: none;
       box-shadow: none;
