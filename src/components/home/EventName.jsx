@@ -26,12 +26,14 @@ const Wrapper = styled.div`
   box-shadow: -0.75rem 0.75rem ${props => props.theme.colors.border};
   text-align: center;
 
-  @media (min-width: ${props => props.theme.pxSizes.breakpoints.md}px) {
-    margin-bottom: 1rem;
-    background: ${props => props.theme.colors.brand};
-    border: none;
-    box-shadow: none;
-    text-align: left;
+  @supports (display: grid) {
+    @media (min-width: ${props => props.theme.pxSizes.breakpoints.md}px) {
+      margin-bottom: 1rem;
+      background: ${props => props.theme.colors.brand};
+      border: none;
+      box-shadow: none;
+      text-align: left;
+    }
   }
 
   h1,
