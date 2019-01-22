@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import Link from 'gatsby-link';
 
 /**
@@ -16,7 +16,11 @@ const Footer = ({ siteName }) => (
     </div>
     <FooterNav>
       <FooterNavLinks>
-        <li>Code of Conduct</li>
+        <li>
+          <Link to="/code-of-conduct" href="/code-of-conduct">
+            Code of Conduct
+          </Link>
+        </li>
         <li>
           <Link to="/" href="/">
             Sponsor Interest

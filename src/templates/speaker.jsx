@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
 import DefaultLayout from '../components/layout/DefaultLayout';
 import Page from '../components/layout/Page';

@@ -1,41 +1,49 @@
 import React from 'react';
-import styled from 'react-emotion';
+import { graphql, StaticQuery } from 'gatsby';
+import { Global } from '@emotion/core';
+import styled from '@emotion/styled';
 import { ThemeProvider } from 'emotion-theming';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import 'typeface-roboto';
-import '../styles/globals';
+import 'modern-normalize';
+import { GlobalStyles } from '../styles/reset';
 import theme from '../utils/theme';
 
 import Header from '../components/ui/Header';
 import Footer from '../components/ui/Footer';
 import SponsorsSection from '../components/sponsors/SponsorsSection';
 
-const Layout = ({ children, data }) => (
-  <ThemeProvider theme={theme}>
-    <LayoutRoot>
-      <Helmet
-        title={data.site.siteMetadata.title}
-        meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' },
-        ]}
-      />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      {children()}
-      <SponsorsSection sponsors={data.sponsors} />
-      <Footer siteName={data.site.siteMetadata.author.name} />
-    </LayoutRoot>
-  </ThemeProvider>
+const IndexLayout = ({ children }) => (
+  <StaticQuery query={query}>
+    {data => (
+      <ThemeProvider theme={theme}>
+        <LayoutRoot>
+          <Global styles={GlobalStyles} />
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              { name: 'description', content: 'Sample' },
+              { name: 'keywords', content: 'sample, something' },
+            ]}
+          />
+          <Header siteTitle={data.site.siteMetadata.title} />
+          {children}
+          <SponsorsSection sponsors={data.sponsors} />
+          <Footer siteName={data.site.siteMetadata.author.name} />
+        </LayoutRoot>
+      </ThemeProvider>
+    )}
+  </StaticQuery>
 );
 
-Layout.propTypes = {
+IndexLayout.propTypes = {
   children: PropTypes.func.isRequired,
   data: PropTypes.shape({}).isRequired,
 };
 
-export default Layout;
+export default IndexLayout;
 
 const LayoutRoot = styled('div')`
   display: flex;
@@ -43,7 +51,7 @@ const LayoutRoot = styled('div')`
   min-height: 100vh;
 `;
 
-export const query = graphql`
+const query = graphql`
   query IndexLayoutQuery {
     site {
       siteMetadata {

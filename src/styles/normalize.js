@@ -1,6 +1,6 @@
-import { css } from 'react-emotion';
+import { css } from '@emotion/core';
 
-export default css`
+export const normalize = css`
 /*! modern-normalize | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /* Document
