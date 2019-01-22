@@ -4,16 +4,9 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 
-const Image = css`
-  margin: 1.5rem auto;
-  max-width: 250px;
-  border-radius: 250px;
-  overflow: hidden;
-`;
-
 const SpeakerCard = ({ name, company, imageSharp }) => (
   <Root>
-    {imageSharp && <Img outerWrapperClassName={Image} alt={name} sizes={imageSharp} />}
+    {imageSharp && <Img className="avatar" alt={name} sizes={imageSharp} />}
     <Inner>
       <Title>{name}</Title>
       {company && <Subtitle>{company}</Subtitle>}
@@ -37,6 +30,13 @@ export default SpeakerCard;
 const Root = styled.header`
   margin-bottom: 2rem;
   text-align: center;
+
+  .avatar {
+    margin: 1.5rem auto;
+    max-width: 250px;
+    border-radius: 250px;
+    overflow: hidden;
+  }
 `;
 
 const Inner = styled.div``;

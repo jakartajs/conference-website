@@ -78,7 +78,7 @@ export default css`
   h5,
   h6 {
     margin-top: 1.414rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     color: inherit;
     font-weight: 500;
     line-height: 1.25;
